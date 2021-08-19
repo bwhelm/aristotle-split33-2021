@@ -1,5 +1,5 @@
 $fn=80;
-thickness = 1.5;    // thickness in mm
+thickness = 1.0;    // thickness in mm
 cornerRadius = .5;  // for rounded corners
 screwRadius = 1.05; // fits M2 size screw
 width = 20.00;      // width of cover ... 19.49
@@ -9,7 +9,7 @@ screw2 = [17.91,3.17];     // location of screw #2
 
 difference()
 {
-    linear_extrude(height = thickness, center=true)
+    /* linear_extrude(height = thickness, center=true) */
         minkowski() {
             square([width, length]);
             circle( 1 );
@@ -17,11 +17,11 @@ difference()
 
     {
         translate(screw1)
-            linear_extrude(height=thickness + 1, center=true)
+            /* linear_extrude(height=thickness + 1, center=true) */
                 circle(screwRadius);
 
         translate(screw2)
-            linear_extrude(height=thickness + 1, center=true)
+            /* linear_extrude(height=thickness + 1, center=true) */
                 circle(screwRadius);
     }
 }
